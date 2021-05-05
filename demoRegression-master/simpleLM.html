@@ -196,7 +196,6 @@ summary {
 
 <div id="TOC">
 <ul>
-<li><a href="#make-a-simple-regression-model--read-in-the-data">make a simple regression model- read in the data</a></li>
 <li><a href="#neck">NECK</a>
 <ul>
 <li><a href="#model-length-neck-this-is-an-example">Model LENGTH ~ NECK this is an example</a></li>
@@ -214,17 +213,13 @@ summary {
 <li><a href="#model-length-weight">Model LENGTH ~ WEIGHT</a></li>
 </ul></li>
 <li><a href="#chest">CHEST</a></li>
-<li><a href="#model-length-chest">MODEL LENGTH ~ CHEST</a>
-<ul>
-<li><a href="#surely-there-is-another-variable-that-can-better-predict-length-than-neck.-find-one-and-compare-its-performance-to-that-of-neck-by-it-value-of-adjusted-rsquared-bigger-is-better.">Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).</a></li>
-</ul></li>
+<li><a href="#model-length-chest">MODEL LENGTH ~ CHEST</a></li>
+<li><a href="#conclusions">CONCLUSIONS</a></li>
 </ul>
 </div>
 
-<div id="make-a-simple-regression-model--read-in-the-data" class="section level3">
-<h3>make a simple regression model- read in the data</h3>
+<p>Set up regression models</p>
 <pre class="r"><code>bears &lt;- read.csv(file=&quot;BEARS.csv&quot;,header = TRUE)</code></pre>
-</div>
 <div id="neck" class="section level1">
 <h1>NECK</h1>
 <div id="model-length-neck-this-is-an-example" class="section level2">
@@ -444,9 +439,14 @@ predict(simpCT,new,se.fit=TRUE)</code></pre>
 ## 
 ## $residual.scale
 ## [1] 4.939419</code></pre>
-<div id="surely-there-is-another-variable-that-can-better-predict-length-than-neck.-find-one-and-compare-its-performance-to-that-of-neck-by-it-value-of-adjusted-rsquared-bigger-is-better." class="section level2">
-<h2>Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).</h2>
 </div>
+<div id="conclusions" class="section level1">
+<h1>CONCLUSIONS</h1>
+<p>The best model for predicting the length of 3 random bears was the one using the variable HEADLEN as seen by the highest adjusted r-squared value. The length prediction for bears 5, 15 and 23 were:<br />
+70.31, 51.94, and 58.83</p>
+<p>The actual length of those 3 bears was:<br />
+62, 52, 54.</p>
+<p>The error in prediction for Bear #5 was approximately 8 inches, for Bear #15 it was almost exact, and for Bear #23 the error in prediction was a “Bear Hair” under 6 inches.</p>
 </div>
 
 
